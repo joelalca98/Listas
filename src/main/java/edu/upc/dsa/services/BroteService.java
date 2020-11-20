@@ -56,7 +56,7 @@ public class BroteService {
     @POST
     @ApiOperation(value = "create a new Brote", notes = "asdasd")
     @ApiResponses(value = {
-            @ApiResponse(code = 201, message = "Successful", response=Track.class),
+            @ApiResponse(code = 201, message = "Successful", response=Brote.class),
             @ApiResponse(code = 500, message = "Validation Error")
 
     })

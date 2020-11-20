@@ -33,6 +33,7 @@ public class Caso {
 
 
     }
+    public Caso(){}
 
     public String getNombre() {
         return nombre;

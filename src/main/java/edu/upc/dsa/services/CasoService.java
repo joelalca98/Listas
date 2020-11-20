@@ -32,7 +32,7 @@ public class CasoService {
 
     public CasoService() {
         this.cm = Covid19ManagerImpl.getInstance();
-        if (cm.size()==0) {
+        if (cm.sizeCasos()==0) {
 
             Date fechaN = new Date( 1995, 07, 24);
             Date fechaInfo = new Date (2020,11,20);

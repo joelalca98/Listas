@@ -12,7 +12,7 @@ public class Covid19ManagerImpl implements Covid19Manager {
 
     private static Covid19ManagerImpl manager;
     static final Logger logger = Logger.getLogger(Covid19ManagerImpl.class.getName());
-    HashMap<String, ResourceBundle> data;
+
     HashMap<String, Brote> brotes;
     List<Caso> casos;
     Brote Mibrote;
@@ -23,7 +23,9 @@ public class Covid19ManagerImpl implements Covid19Manager {
 
     private Covid19ManagerImpl() /** Parte de Singletone */
     {
-        this.data = new HashMap<String, ResourceBundle>();
+
+        this.brotes = new HashMap<String, Brote>();
+        this.casos = new LinkedList<Caso>();
     }
 
     public static  Covid19ManagerImpl getInstance() /**  La unica entrada a una única instancia*/

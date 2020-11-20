@@ -32,7 +32,7 @@ public class Covid19ManagerTest {
     @Test
     public void crearBrote(){
         Covid19ManagerImpl.getInstance().addBrote("Brote3");
-        assertEquals(Covid19ManagerImpl.getInstance().sizeBrotes(),2);
+        assertEquals(3,Covid19ManagerImpl.getInstance().sizeBrotes());
 
 
     }
@@ -40,7 +40,7 @@ public class Covid19ManagerTest {
     @Test
     public void addBrote() {
         Covid19ManagerImpl.getInstance().addCaso("Kevin","Alcalde","Brote2",new Date(1995,7,24),new Date(2020,6,4),"confirmado","masculino","kevin.alca@gmail.com","423423523","travLesCorts");
-       assertEquals(Covid19ManagerImpl.getInstance().sizeCasos(),1);
+       assertEquals(2,Covid19ManagerImpl.getInstance().sizeCasos());
 
     }
 
