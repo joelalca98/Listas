@@ -115,15 +115,40 @@ public class Covid19ManagerImpl implements Covid19Manager {
     }
 
     @Override
-    public int size() {
+    public int sizeBrotes() {
 
 
 
         int ret = this.brotes.size();
-        logger.info("size " + ret);
+        logger.info("size caso" + ret);
 
         return ret;
 
+    }
+
+    public int sizeCasos() {
+
+
+        int ret = this.casos.size();
+        logger.info("size casos" + ret);
+
+        return ret;
 
     }
+
+
+
+
+
+
+
+
+    public static void delete(){
+        manager = null;    //Permite reiniciar la base de datos
+        logger.info("Instancia MathManagerImpl borrada");
+    }
+
+
+
+
 }

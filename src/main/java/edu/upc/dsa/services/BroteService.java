@@ -29,7 +29,7 @@ public class BroteService {
     public BroteService() {
 
         this.cm = Covid19ManagerImpl.getInstance();
-        if (cm.size()==0) {
+        if (cm.sizeBrotes()==0) {
             this.cm.addBrote("Brote1");
 
         }

@@ -16,6 +16,6 @@ public interface Covid19Manager {
     public Caso addCaso (Caso o);
     public Caso addCaso(String nombre, String apellidos, String idCaso, Date fechaNacimiento, Date fechaInforme, String clasificación, String genero, String correo, String telefono, String direccion );
     public List<Caso> ordersByClasificacion (String idBrote);
-    public int size();
+    public int sizeBrotes();
 
 }
