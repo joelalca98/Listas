@@ -13,8 +13,9 @@ public class Covid19ManagerImpl implements Covid19Manager {
     private static Covid19ManagerImpl manager;
     static final Logger logger = Logger.getLogger(Covid19ManagerImpl.class.getName());
 
-    HashMap<String, Brote> brotes;
+    HashMap<String,Brote> brotes;
     List<Caso> casos;
+    Caso miCaso;
     Brote Mibrote;
     List<Caso> miListaCasos;
     List<Caso> resultado1;
@@ -24,7 +25,7 @@ public class Covid19ManagerImpl implements Covid19Manager {
     private Covid19ManagerImpl() /** Parte de Singletone */
     {
 
-        this.brotes = new HashMap<String, Brote>();
+        this.brotes = new HashMap< String , Brote>();
         this.casos = new LinkedList<Caso>();
     }
 
@@ -37,7 +38,7 @@ public class Covid19ManagerImpl implements Covid19Manager {
 
     @Override
     public void addBrote(String idBrote) {
-        this.brotes.put(idBrote,new Brote(idBrote));
+        this.brotes.put(idBrote ,new Brote(idBrote));
 
     }
 
@@ -56,7 +57,7 @@ public class Covid19ManagerImpl implements Covid19Manager {
 
     @Override
     public Collection<Brote> brotesDisp() {
-        return brotes.values();
+        return this.brotes.values();
 
     }
 
@@ -110,10 +111,38 @@ public class Covid19ManagerImpl implements Covid19Manager {
 
 
         }
+        Collections.sort(resultado1 , new Comparator<Caso>() {
+            @Override
+            public int compare(Caso o1, Caso o2) {
+                return o1.getFechaInforme().compareTo(o2.getFechaInforme());
+            }
+        });
+
+
+        Collections.sort(resultado2 , new Comparator<Caso>() {
+            @Override
+            public int compare(Caso o1, Caso o2) {
+                return o1.getFechaInforme().compareTo(o2.getFechaInforme());
+            } });
 
 
 
-        return resultado3;
+        Collections.sort(resultado3 , new Comparator<Caso>() {
+            @Override
+            public int compare(Caso o1, Caso o2) {
+                return o1.getFechaInforme().compareTo(o2.getFechaInforme());
+            } });
+
+        List<Caso> listaOrdenada = new LinkedList<Caso>();
+
+
+        listaOrdenada.addAll(resultado1);
+        listaOrdenada.addAll(resultado2);
+        listaOrdenada.addAll(resultado3);
+
+
+
+        return listaOrdenada;
     }
 
     @Override

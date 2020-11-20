@@ -1,5 +1,5 @@
 package edu.upc.dsa.models;
-
+import edu.upc.dsa.util.RandomUtils;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,8 +10,11 @@ public class Brote {
     public String getIdBrote(){
         return idBrote;
     }
-    public Brote (){}
+    public Brote(){
+        this.idBrote = RandomUtils.getId();
+    }
     public Brote(String idBrote) { /** Constructor*/
+        this();
         this.idBrote = idBrote;
         this.casosList = new LinkedList<Caso>();
     }
@@ -23,5 +26,9 @@ public class Brote {
         return casosList;
     }
 
+    @Override
+    public String toString() {
+        return "Track [id="+idBrote+"]";
+    }
 
 }

@@ -1,5 +1,7 @@
 package edu.upc.dsa.models;
 
+import edu.upc.dsa.util.RandomUtils;
+
 import java.util.Date;
 
 public class Caso {
@@ -33,7 +35,10 @@ public class Caso {
 
 
     }
-    public Caso(){}
+    public Caso(){
+
+        this.idCaso = RandomUtils.getId();
+    }
 
     public String getNombre() {
         return nombre;

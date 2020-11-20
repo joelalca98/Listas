@@ -31,6 +31,8 @@ public class BroteService {
         this.cm = Covid19ManagerImpl.getInstance();
         if (cm.sizeBrotes()==0) {
             this.cm.addBrote("Brote1");
+            this.cm.addBrote("Brote2");
+            this.cm.addBrote("Brote3");
 
         }
     }
@@ -47,8 +49,8 @@ public class BroteService {
     //Respuesta
     public Response getBrotes() {
         Collection<Brote> brotes = this.cm.brotesDisp();
-        GenericEntity<Collection<Brote>> entity = new GenericEntity<Collection<Brote>>(brotes) {};
-        return Response.status(201).entity(entity).build()  ;
+        GenericEntity<Collection<Brote>> brot = new GenericEntity<Collection<Brote>>(brotes) {};
+        return Response.status(201).entity(brot).build()  ;
 
     }
 
